@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import UserRow from "../components/UserRow";
 import Table from "../components/Table";
+import Jumbotron from "../components/Jumbotron";
 
 class EmployeeDirectory extends Component {
   state = {
@@ -18,6 +19,7 @@ class EmployeeDirectory extends Component {
   render() {
     return (
       <div>
+        <Jumbotron />
         <Table>
         {this.state.users.map(user => (
           <UserRow 
