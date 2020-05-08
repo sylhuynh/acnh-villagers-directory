@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 
-class AcnhDirectory extends Component {
+class EmployeeDirectory extends Component {
   state = {
     users: []
   }
@@ -28,4 +28,4 @@ class AcnhDirectory extends Component {
   }
 }
 
-export default AcnhDirectory;
+export default EmployeeDirectory;
