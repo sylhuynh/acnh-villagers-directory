@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import UserRow from "../components/UserRow";
+import Table from "../components/Table";
 
 class EmployeeDirectory extends Component {
   state = {
@@ -13,16 +15,22 @@ class EmployeeDirectory extends Component {
     });
   }
 
-  renderUsers() {
-    return this.state.users.map(user => {
-      return <p>{user.name.first}</p>
-    });
-  }
   render() {
     return (
       <div>
-        <h1>I'm a header!</h1>
-        {this.renderUsers()}
+        <Table>
+        {this.state.users.map(user => (
+          <UserRow 
+          image = {user.picture.thumbnail}
+          firstName = {user.name.first} 
+          lastName = {user.name.last}
+          phone = {user.phone}
+          email = {user.email}
+          dob = {user.dob.date}
+          />
+          
+        ))}
+      </Table>
       </div>
     );
   }
