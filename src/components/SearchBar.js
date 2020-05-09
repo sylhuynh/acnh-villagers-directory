@@ -2,13 +2,15 @@ import React from "react";
 
 function SearchBar() {
     return (
-        <div className="input-group mb-3">
-            <input type="text" className="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2" />
-                <div className="input-group-append">
-                    <button className="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-                </div>
+        <form className="form-inline">
+        <div className="form-group mx-sm-3 mb-2">
+          <label for="inputSearchTerm" className="sr-only">Searh Term</label>
+          <input type="searchEm" className="form-control" id="inputSearch" placeholder="Search">
+              </input>
         </div>
+        <button type="submit" className="btn btn-secondary mb-2">Search</button>
+      </form>
     );
 }
 
-export default SearchBar;
+export default SearchBar
