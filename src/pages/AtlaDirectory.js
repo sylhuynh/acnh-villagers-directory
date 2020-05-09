@@ -8,7 +8,9 @@ import SearchBar from "../components/SearchBar";
 
 class AtlaDirectory extends Component {
   state = {
-    characters: []
+    search: "",
+    characters: [],
+    filteredChars: []
   }
 
   componentDidMount() {
@@ -19,23 +21,34 @@ class AtlaDirectory extends Component {
     });
   }
 
+  filterCharacters = () => {
+    let filteredChars = this.state.characters.filter((character) => {
+      return character.name
+        .toLowerCase()
+        .includes(this.state.search.toLowerCase());
+    });
+    this.setState({ filteredChars: filteredChars });
+  }
+
+  handleInputChange = (event) => {
+    this.setState({ search: event.target.value });
+    this.filterCharacters();
+
+  }
+
   render() {
     return (
       <div>
         <Jumbotron />
-        <SearchBar />
+        <SearchBar search={this.state.search} handleInputChange={this.handleInputChange} />
         <Table >
-          {this.state.characters.map(character => (
-            <UserRow
-              key={character.id}
-              image={character.photoUrl}
-              name={character.name}
-              weapon={character.weapon}
-              profession={character.profession}
-              affiliation={character.affiliation}
-            />
-
-          ))}
+          <UserRow
+            charactersArray={
+              this.state.filteredChars && this.state.filteredChars.length > 0
+                ? this.state.filteredChars
+                : this.state.characters
+            }
+          />
         </Table>
       </div>
     );
