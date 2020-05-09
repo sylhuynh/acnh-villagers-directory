@@ -1,9 +1,9 @@
 import React from 'react';
-import EmployeeDirectory from "./pages/EmployeeDirectory";
+import AtlaDirectory from "./pages/AtlaDirectory";
 
 function App() {
   return (
-    <EmployeeDirectory />
+    <AtlaDirectory />
   );
 }
 

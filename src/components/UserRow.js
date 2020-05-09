@@ -3,11 +3,11 @@ import React from "react";
 function UserRow(props) {
     return (
         <tr>
-            <th scope="row"><img src= {props.image} alt= {props.lastName}></img></th>
-            <td>{props.firstName} {props.lastName}</td>
-            <td>{props.phone}</td>
-            <td>{props.email}</td>
-            <td>{props.dob}</td>
+            <th scope="row"><img src= {props.image} alt= {props.name}></img></th>
+            <td>{props.name}</td>
+            <td>{props.weapon}</td>
+            <td>{props.profession}</td>
+            <td>{props.affiliation}</td>
         </tr>
     );
 }

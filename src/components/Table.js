@@ -7,9 +7,9 @@ function Table(props) {
                 <tr>
                     <th scope="col">Image</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Phone</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">DOB</th>
+                    <th scope="col">Weapon</th>
+                    <th scope="col">Profession</th>
+                    <th scope="col">Affiliation</th>
                 </tr>
             </thead>
             <tbody>
