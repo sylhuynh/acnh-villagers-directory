@@ -3,6 +3,8 @@ import API from "../utils/API";
 import UserRow from "../components/UserRow";
 import Table from "../components/Table";
 import Jumbotron from "../components/Jumbotron";
+import SearchBar from "../components/SearchBar";
+
 
 class EmployeeDirectory extends Component {
   state = {
@@ -21,6 +23,7 @@ class EmployeeDirectory extends Component {
     return (
       <div>
         <Jumbotron />
+        <SearchBar />
         <Table>
         {this.state.users.map(user => (
           <UserRow 
