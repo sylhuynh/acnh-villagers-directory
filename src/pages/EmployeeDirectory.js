@@ -8,6 +8,7 @@ class EmployeeDirectory extends Component {
   state = {
     users: []
   }
+
   componentDidMount() {
     API.getUsers().then(res => {
       this.setState({ users: res.data.results });
@@ -23,6 +24,7 @@ class EmployeeDirectory extends Component {
         <Table>
         {this.state.users.map(user => (
           <UserRow 
+          key = {user.id}
           image = {user.picture.thumbnail}
           firstName = {user.name.first} 
           lastName = {user.name.last}
